@@ -1,0 +1,60 @@
+schema_version = "1.0.0"
+
+# Basics
+id = "wingwalker_extension"
+version = "0.0.1"
+name = "Wingwalker Tools Extension"
+tagline = "Wing modeling and design"
+maintainer = "David Days <david.c.days@gmail.com>"
+# Supported types: "add-on", "theme"
+type = "add-on"
+
+# Source at GitHub
+website = "https://github.com/david-days/wingwalker-blender"
+
+# Optional list defined by Blender and server, see:
+# https://docs.blender.org/manual/en/dev/advanced/extensions/tags.html
+tags = ["Modeling", "Import-Export"]
+
+blender_version_min = "4.2.0"
+
+# License conforming to https://spdx.org/licenses/ (use "SPDX: prefix)
+# https://docs.blender.org/manual/en/dev/advanced/extensions/licenses.html
+license = [
+  "SPDX:MIT",
+]
+
+# Copyright info
+copyright = [
+  "2024 David C. Days"
+]
+
+# platforms = ["windows-x64", "macos-arm64", "linux-x64"]
+
+# https://docs.blender.org/manual/en/dev/advanced/extensions/python_wheels.html
+wheels = [
+  "./wheels/wingwalker-0.1.3-py3-non-any.whl"
+]
+
+# # Additional resource access
+# # * files (for access of any filesystem operations)
+# # * network (for internet access)
+# # * clipboard (to read and/or write the system clipboard)
+# # * camera (to capture photos and videos)
+# # * microphone (to capture audio)
+#
+[permissions]
+# network = "Future:  Reach out to airfoiltools.com directly for search/listing"
+files = "Import airfoil specification DAT files"
+# clipboard = "Copy and paste bone transforms"
+
+# build settings.
+# https://docs.blender.org/manual/en/dev/advanced/extensions/command_line_arguments.html#command-line-args-extension-build
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "/.git/",
+  "/*.zip",
+  ".gitignore"
+]
+output_dir = "../dist"
